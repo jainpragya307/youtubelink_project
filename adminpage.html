@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN PAGE</title>
+    <link rel="stylesheet" href="./adminpage.css">
+</head>
+<body>
+    <div class="admin">
+        <form action="" id="data">
+
+            <div class="input_title">
+
+                <h3>Course</h3>
+                <select name="course" id="course">
+                    <option value="">SELECT COURSE</option>
+                    <option value="python">PYTHON</option>
+                    <option value="java">JAVA</option>
+                    <option value="dbms">DBMS</option>
+                </select>
+            </div>
+
+            <div class="input_title">
+
+                <h3>Topic</h3>
+                <input type="text" id="topic" placeholder="Enter topic name" required>
+            </div>
+
+            <div class="input_title">
+
+                <h3>Video_Link</h3>
+                <input type="text" id="video_link" placeholder="Enter video link" required>
+            </div>
+
+            <div class="input_title">
+
+                <h3>Video_Topic</h3>
+                <input type="text" id="video_topic" placeholder="Enter video topic" required>
+            </div>
+
+            <div class="input_title">
+
+                <h3>Description</h3>
+                <input type="text" id="description" placeholder="Enter Description">
+            </div>
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+
+
+</body>
+</html>

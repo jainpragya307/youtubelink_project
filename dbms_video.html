@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS</title>
+    <link rel="stylesheet" href="./dbms_video.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="./python_video.html">PYTHON</a>
+        <a href="./java_video.html">JAVA</a>
+        <a href="./dbms_video.html">DBMS</a>
+    </div>
+
+    <div class="divide">
+
+        <div class="side-bar">
+            <h1>TOPICS LIST</h1>
+            <a href="./dbms_video.html">Introduction to DBMS</a>
+            <a href="./dbms_methods.html">Create , Insert , Update , Delete Table</a>
+            <a href="./dbms_keys.html">Keys in DBMS</a>
+            <a href="./dbms_ER.html">ER Model</a>
+            <a href="./dbms_normalization.html">Normalization</a>
+
+        </div>
+
+
+        <div class="intro_video">
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/3EJlovevfcA?si=Q5o9gjRgQygIJ-ST" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        </div>
+
+    </div>
+
+    <script>
+        let selectedSubject = sessionStorage.getItem("selectedSubject");
+
+        if (selectedSubject !== "dbms")
+        {
+            alert("Please select DBMS from the main page.");
+            window.location.href = "./mainpage.html";
+        }
+        
+    </script>
+</body>
+</html>

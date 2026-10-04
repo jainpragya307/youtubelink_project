@@ -1,0 +1,37 @@
+{
+  "data": [
+    {
+      "course": "python",
+      "topic": "List",
+      "video_link": "https://www.youtube.com/embed/qVyvmzFxF_o?si=-U5Ar8U-cydGj0uF",
+      "video_topic": "List intro",
+      "description": "this is the detailed video",
+      "id": "dA1jdsEPmOU"
+    },
+    {
+      "course": "python",
+      "topic": "Tuple",
+      "video_link": "https://www.youtube.com/embed/cYb_w9pte-Y?si=6KR55aDvcNlEwnAx",
+      "video_topic": "Tuple Introduction",
+      "description": " Introduction to Tuple",
+      "id": "AjvomH7af3M"
+    },
+    {
+      "course": "java",
+      "topic": "Java ",
+      "video_link": "https://www.youtube.com/embed/BkBWThNrWkI?si=2O2rOy1H4oOAjH8P",
+      "video_topic": "Java Inheritance",
+      "description": "Inheritance",
+      "id": "nf3_fqYVbO8"
+    },
+    {
+      "course": "java",
+      "topic": "Inheritance",
+      "video_link": "https://www.youtube.com/embed/XSuybcFfLx4?si=_WwDz8qndGcLfx0r",
+      "video_topic": "Java Inheritance",
+      "description": "Inheritance",
+      "id": "FbN6tu7_T2g"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

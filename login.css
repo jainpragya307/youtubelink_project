@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(80, 167, 115);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+}
+
+.loginpage{
+    width: 550px;
+    height: 700px;
+    background-color: rgb(5, 41, 18);
+    border: 3px solid;
+    border-radius: 40px;
+    position: relative;
+    padding: 180px 40px 180px 40px;
+}
+
+.title{
+    width: 250px;
+    height: 90px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 27%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h3 {
+    font-size: 38px;
+    font-family: Arial;
+}
+
+.input-title h3{
+    font-size: 15px;
+    font-weight:normal;
+    color: white;
+    padding: 7px;
+}
+
+.input-box {
+    width: 100%;
+    height: 70px;
+    border: 1px solid #d5d5d5;
+    border-radius: 40px;
+    margin-bottom: 25px;
+    padding: 25px;
+    background-color: white;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: transparent;
+}
+
+.buttons button {
+    width: 100%;
+    height: 70px;
+    border-radius: 40px;
+    border: 1px solid #d5d5d5;
+    background-color: black;
+    color: white;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.buttons button a{
+    color: white;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 18px;
+    color: white;
+}
+
+.register-text a {
+    color: white;
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}

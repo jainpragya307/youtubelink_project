@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User list</title>
+</head>
+<body>
+    <div class="user_list">
+        <h3>Users List</h3>
+    </div>
+
+    <table id="tbl">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email ID</th>
+            <th>Python</th>
+            <th>Java</th>
+            <th>DBMS</th>
+        </tr>
+
+    </table>
+
+    <script>
+
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        let table = document.getElementById("tbl");
+
+         // Get logged-in user's email
+        let loggedEmail = sessionStorage.getItem("userEmail");
+
+        // Get selected subject 
+        let selectedSubject = localStorage.getItem("selectedSubject");
+
+        function renderData() 
+        {
+
+            for (let i = 0; i < users.length; i++) 
+            {
+
+                let user = users[i];
+
+                let tr = document.createElement("tr")
+
+                // ID
+                let td1 = document.createElement("td");
+                td1.textContent = i + 1;
+
+                //NAME
+                let td2 = document.createElement("td");
+                td2.textContent = user.name;
+
+                //EMAIL
+                let td3 = document.createElement("td");
+                td3.textContent = user.email;
+
+                 // Python
+                let td4 = document.createElement("td");
+                let pythonBtn = document.createElement("button");
+                pythonBtn.textContent = "Python";
+                td4.appendChild(pythonBtn);
+
+                // Java
+                let td5 = document.createElement("td");
+                let javaBtn = document.createElement("button");
+                javaBtn.textContent = "Java";
+                td5.appendChild(javaBtn);
+
+                // DBMS
+                let td6 = document.createElement("td");
+                let dbmsBtn = document.createElement("button");
+                dbmsBtn.textContent = "DBMS";
+                td6.appendChild(dbmsBtn);
+
+
+                // Check logged-in user 
+                if (user.email === loggedEmail) 
+                { 
+                    if (selectedSubject === "python") 
+                    { 
+                        pythonBtn.style.backgroundColor = "green"; 
+                        pythonBtn.style.color = "white"; 
+                    } 
+                    if (selectedSubject === "java") 
+                    { 
+                        javaBtn.style.backgroundColor = "green"; 
+                        javaBtn.style.color = "white"; 
+                    } 
+                    if (selectedSubject === "dbms") 
+                    { 
+                        dbmsBtn.style.backgroundColor = "green"; 
+                        dbmsBtn.style.color = "white"; 
+                    } 
+                }
+
+                // Python button clicked
+                pythonBtn.onclick = function() 
+                {
+                    pythonBtn.style.backgroundColor = "green";
+                    pythonBtn.style.color = "white";
+
+                    javaBtn.style.backgroundColor = "red";
+                    javaBtn.style.color = "white";
+
+                    dbmsBtn.style.backgroundColor = "red";
+                    dbmsBtn.style.color = "white";
+                };
+
+                // Java button clicked
+                javaBtn.onclick = function() 
+                {
+                    javaBtn.style.backgroundColor = "green";
+                    javaBtn.style.color = "white";
+
+                    pythonBtn.style.backgroundColor = "red";
+                    pythonBtn.style.color = "white";
+
+                    dbmsBtn.style.backgroundColor = "red";
+                    dbmsBtn.style.color = "white";
+                };
+
+                // DBMS button clicked
+                dbmsBtn.onclick = function() 
+                {
+                    dbmsBtn.style.backgroundColor = "green";
+                    dbmsBtn.style.color = "white";
+
+                    pythonBtn.style.backgroundColor = "red";
+                    pythonBtn.style.color = "white";
+
+                    javaBtn.style.backgroundColor = "red";
+                    javaBtn.style.color = "white";
+                };
+
+                // Add all cells to row
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                tr.appendChild(td5);
+                tr.appendChild(td6);
+
+                // Add row to table
+                table.appendChild(tr);
+            }
+        }
+                    
+        renderData();
+    </script>
+</body>
+</html>

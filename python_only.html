@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python videos</title>
+    <link rel="stylesheet" href="./python_only.css">
+</head>
+<body>
+
+    <h1>Python Videos</h1>
+
+    <div id="videoList"></div>
+
+    <script>
+
+        async function renderData() {
+
+            let res = await fetch("http://localhost:3000/data");
+            let data = await res.json();
+
+            // Only Python videos
+            let pythonVideos = data.filter(function(video) {
+                return video.course == "python";
+            });
+            createVideo(pythonVideos);   
+        }
+
+        function createVideo(video)
+        { 
+            let videoList = document.getElementById("videoList");
+
+            for(let i = 0; i < video.length; i++)
+            {
+                const element = video[i];
+                // console.log(element.video_link);
+
+
+                // Create a <div> for each video
+                let box = document.createElement("div");
+                box.className = "video_box";   //gives it the class: <div class="video_box"></div>
+
+
+                // This creates an iframe : <iframe></iframe>
+                let iframe = document.createElement("iframe");
+
+                iframe.src = element.video_link;
+                iframe.width = "560";
+                iframe.height = "315";
+                iframe.allowFullscreen = true;
+
+                // Video topic
+                let title = document.createElement("h3");
+                title.innerText = "Topic: " + element.video_topic;
+
+                // Description
+                let description = document.createElement("p");
+                description.innerText = "Description: " + element.description;
+
+                // This is putting the elements inside your <div>.
+                box.appendChild(iframe)
+                box.appendChild(title);
+                box.appendChild(description);
+
+                // Put the box on the webpage
+                videoList.appendChild(box);
+            }
+        }
+
+        renderData();
+    </script>
+</body>
+</html>

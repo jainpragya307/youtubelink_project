@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+
+    <div class="loginpage">
+        
+        <div class="title">
+            <h3>Login</h3>
+        </div>
+
+        <form>
+
+            <div class="input-title">
+                <h3>Your name</h3>
+            </div>
+
+            <div class="input-box">
+                <input type="text" id="name" placeholder="Name" required>
+            </div>
+
+            <div class="input-title">
+                <h3>Your email</h3>
+            </div>
+
+            <div class="input-box">
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+
+            <div class="buttons">
+                <button type="button" onclick="login()">Sign In</button>
+            </div>
+
+        </form>
+
+        <p class="register-text">
+                Don't have an account?
+                <a href="register.html">Register here</a>
+        </p>
+    </div>
+
+    <script>
+
+        function login()
+        {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value; //jab user login krega tab uski email id temporary humne sessionStorage me store krvayii sessionStorage.setItem("userEmail", email);
+            
+            let users = JSON.parse(localStorage.getItem("users")) || []; 
+            let userFound = false; 
+            
+            for (let i = 0; i < users.length; i++) 
+            { 
+                if (users[i].name === name && users[i].email === email) 
+                { 
+                    userFound = true; 
+                    break; 
+                } 
+            } 
+            if (userFound) 
+            { 
+                sessionStorage.setItem("userEmail", email); 
+                sessionStorage.removeItem("selectedSubject"); 
+                alert("Login successful"); 
+                window.location.href = "./mainpage.html"; 
+            } 
+            else 
+            { 
+                alert("Invalid name or email"); 
+            } 
+        }
+        
+    </script>
+</body>
+</html>

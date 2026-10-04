@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Page</title>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="./python_video.html" onclick="selectSubject('python')">PYTHON</a>
+        <a href="./java_video.html" onclick="selectSubject('java')">JAVA</a>
+        <a href="./dbms_video.html" onclick="selectSubject('dbms')">DBMS</a>
+    </div>
+
+    <div class="welcome">
+        <h1>Learn. Code. Grow. 🚀</h1>
+        <p>Explore Python, Java & DBMS</p>
+        <p>Learn concepts • Watch videos • Build your skills</p>
+    </div>
+    
+    <script>
+
+        function selectSubject(subject)
+        {
+            sessionStorage.setItem("selectedSubject", subject);
+        }
+
+</script>
+</body>
+</html>

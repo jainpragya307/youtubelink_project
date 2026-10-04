@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java videos</title>
+</head>
+<body>
+
+    <h1>Java Videos</h1>
+
+    <div id="videoList"></div>
+
+    <script>
+
+        async function renderData() {
+
+            let res = await fetch("http://localhost:3000/data");
+            let data = await res.json();
+
+            // Only Python videos
+            let javaVideos = data.filter(function(video) {
+                return video.course == "java";
+            });
+            createVideo(javaVideos);   
+        }
+
+        function createVideo(video)
+        { 
+            let videoList = document.getElementById("videoList");
+
+            for(let i = 0; i < video.length; i++)
+            {
+                const element = video[i];
+                // console.log(element.video_link);
+
+                let box = document.createElement("div");
+                box.className = "video_box";
+
+                let iframe = document.createElement("iframe");
+
+                iframe.src = element.video_link;
+                iframe.width = "560";
+                iframe.height = "315";
+                iframe.allowFullscreen = true;
+
+                box.appendChild(iframe)
+
+                videoList.appendChild(box);
+            }
+        }
+
+        renderData();
+    </script>
+</body>
+</html>

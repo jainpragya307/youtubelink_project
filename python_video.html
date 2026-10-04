@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYTHON</title>
+    <link rel="stylesheet" href="./python_video.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="./python_video.html">PYTHON</a>
+        <a href="./java_video.html">JAVA</a>
+        <a href="./dbms_video.html">DBMS</a>
+    </div>
+
+    <div class="divide">
+
+        <div class="side-bar">
+            <h1>TOPICS LIST</h1>
+            <a href="./python_video.html">Introduction</a>
+            <a href="./python_list.html">List</a>
+            <a href="./python_tuple.html">Tuple</a>
+            <a href="./python_set.html">Set</a>
+            <a href="./python_dict.html">Dictionary</a>
+        </div>
+
+        <div class="intro_video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/XIR20HH8mNY?si=SrVJVMtMlXZg0sZR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+    <script>
+
+        let selectedSubject = sessionStorage.getItem("selectedSubject");
+
+        if (selectedSubject !== "python")
+        {
+            alert("Please select Python from the main page.");
+            window.location.href = "./mainpage.html";
+        }
+
+</script>
+</body>
+</html>
